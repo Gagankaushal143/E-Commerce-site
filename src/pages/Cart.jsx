@@ -4,11 +4,11 @@ export const Cart = () => {
     const { cart } = useCart()
 
     const total = cart.reduce((sum, item) => {
-        return sum + item.price
+        return sum + item.price * item.quantity
     }, 0)
 
     if (cart.length === 0) {
-        return <h1>Cart is empty</h1>
+        return <h1 className="text-center mt-36 text-2xl text-gray-400">Cart is empty</h1>
     }
 
     return (
@@ -25,6 +25,7 @@ export const Cart = () => {
                         <div className="pl-2">
                             <h2 className="text-lg font-semibold"><span className="hover:text-pink-600 cursor-pointer">{item.title}</span></h2>
                             <p className="font-bold text-lg">$ {item.price}</p>
+                            <p className="font-bold text-gray-400">Quantity: {item.quantity}</p>
                         </div>
                     </div>
                     </div>
