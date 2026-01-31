@@ -18,7 +18,7 @@ export const ProductCard = ({ product }) => {
                 </div>
                 <div className="flex justify-between items-center px-2 py-2 text-sm">
                     <button className="bg-pink-600  px-6 py-2 rounded-full text-white hover:bg-pink-500 cursor-pointer active:scale-97 transition-all">Buy now</button>
-                    <button className="flex items-center justify-between bg-purple-600 px-6 py-2 rounded-full text-white hover:bg-purple-500 cursor-pointer active:scale-97 transition-all" onClick={() => addToCart(product)}><FaCartPlus className="text-lg"/>Add to cart </button>
+                    <button className="flex justify-between bg-purple-600 px-6 py-2 rounded-full text-white hover:bg-purple-500 cursor-pointer active:scale-97 transition-all" onClick={() => addToCart(product)}>Add to cart <FaCartPlus className="text-lg ml-1"/></button>
                 </div>
             </div>
         </div>

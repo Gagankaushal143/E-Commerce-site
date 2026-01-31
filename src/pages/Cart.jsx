@@ -2,7 +2,7 @@ import { useCart } from "../contexts/CartContext"
 import { BsCartXFill } from "react-icons/bs";
 
 export const Cart = () => {
-    const { cart, removeFromCart } = useCart()
+    const { cart, removeFromCart , increaseQuantity, decreaseQuantity} = useCart()
 
     const total = cart.reduce((sum, item) => {
         return sum + item.price * item.quantity
@@ -29,7 +29,9 @@ export const Cart = () => {
                             <div className="pl-2">
                                 <h2 className="text-lg"><span className="hover:text-pink-600 cursor-pointer truncate">{item.title}</span></h2>
                                 <p className="font-bold text-base">$ {item.price}</p>
-                                <p className="font-bold text-gray-500">Quantity: {item.quantity}</p>
+                                <div className="flex justify-between items-center">
+                                    <p className="font-bold text-gray-500">Quantity: <button onClick={() => decreaseQuantity(item.id)} className="bg-gray-500 px-2 rounded-md text-white">-</button> {item.quantity} <button onClick={() => increaseQuantity(item.id)} className="bg-gray-500 px-2 rounded-md text-white">+</button></p>
+                                </div>
                             </div>
                         </div>
                     </div>
