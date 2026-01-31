@@ -17,20 +17,24 @@ export const Home = () => {
                 }
 
                 const data = await res.json()
-                setProducts(data.products)
+                setTimeout(() => {
+                    setProducts(data.products)
+                    setLoading(false)
+                }, 2500);
             }
             catch(err){
                 setError(err.message)
-            }
-            finally{
                 setLoading(false)
             }
+            
         }
         fetchProducts()
     },[])
 
     if(loading){
-        return <p>Loading...</p>
+        return <div className="flex items-center justify-center h-[60vh]">
+            <p className="flex justify-center items-center text-xl">Loading products <div className="flex items-center justify-center"> <div className="h-6 w-6 ml-2 rounded-full border-4 border-indigo-600 border-t-transparent animate-spin"></div> </div></p>
+        </div>
     }
 
     if(error){
