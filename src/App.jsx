@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer"
 
 function App() {
   const [showCart, setShowCart] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const togglePage = () => {
     setShowCart(!showCart)
@@ -15,9 +16,9 @@ function App() {
   return (
     <>
       <Navbar onToggle={togglePage} showCart={showCart}/>
-      {showCart ? <Cart /> : <Home />}
-      <hr className="text-purple-400"/>
-      <Footer />
+      {showCart ? <Cart /> : <Home setIsLoading={setIsLoading}/>}
+      
+      {!isLoading &&  <Footer />}
     </>
   )
 }

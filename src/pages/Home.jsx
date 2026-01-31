@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { ProductCard } from "../components/ProductCard"
 
-export const Home = () => {
+export const Home = ({setIsLoading}) => {
 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -10,6 +10,8 @@ export const Home = () => {
     useEffect(() => {
         async function fetchProducts() {
             try{
+                setIsLoading(true)
+                
                 const res = await fetch(`https://dummyjson.com/products`)
 
                 if(!res.ok){
@@ -20,16 +22,19 @@ export const Home = () => {
                 setTimeout(() => {
                     setProducts(data.products)
                     setLoading(false)
+                    setIsLoading(false)
+
                 }, 2500);
             }
             catch(err){
                 setError(err.message)
                 setLoading(false)
+                setIsLoading(false)
             }
             
         }
         fetchProducts()
-    },[])
+    },[setIsLoading])
 
     if(loading){
         return <div className="flex items-center justify-center h-[60vh]">
