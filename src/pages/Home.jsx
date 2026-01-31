@@ -37,7 +37,7 @@ export const Home = ({setIsLoading}) => {
     },[setIsLoading])
 
     if(loading){
-        return <div className="flex items-center justify-center h-[60vh]">
+        return <div className="flex items-center justify-center h-screen">
             <p className="flex justify-center items-center text-xl">Loading products <div className="flex items-center justify-center"> <div className="h-6 w-6 ml-2 rounded-full border-4 border-indigo-600 border-t-transparent animate-spin"></div> </div></p>
         </div>
     }
