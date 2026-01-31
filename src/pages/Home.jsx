@@ -39,7 +39,7 @@ export const Home = () => {
 
   return (
     <div className="bg-gray-100">
-        <h1>Products</h1>
+        <h1 className="px-8 pt-16 text-2xl">Products</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 py-10">
             {products.map(product => (
                 <ProductCard key={product.id} product={product}/>
