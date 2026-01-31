@@ -13,7 +13,7 @@ export const Cart = () => {
     }
 
     return (
-        <div>
+        <div className="h-screen">
             <h1 className="pt-16 text-2xl px-8">My Cart</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 py-10">
                 {cart.map((item, index) => (

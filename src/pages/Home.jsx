@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { ProductCard } from "../components/ProductCard"
+import { AiFillProduct } from "react-icons/ai";
 
 export const Home = ({setIsLoading}) => {
 
@@ -24,7 +25,7 @@ export const Home = ({setIsLoading}) => {
                     setLoading(false)
                     setIsLoading(false)
 
-                }, 2500);
+                }, 2000);
             }
             catch(err){
                 setError(err.message)
@@ -48,7 +49,7 @@ export const Home = ({setIsLoading}) => {
 
   return (
     <div className="bg-gray-100">
-        <h1 className="px-8 pt-16 text-2xl">Products</h1>
+        <h1 className="px-8 pt-16 text-2xl flex items-center justify-start">Products <AiFillProduct className="ml-2 text-pink-300"/></h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 py-10">
             {products.map(product => (
                 <ProductCard key={product.id} product={product}/>
