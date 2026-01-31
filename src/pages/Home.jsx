@@ -38,7 +38,7 @@ export const Home = () => {
     }
 
   return (
-    <div>
+    <div className="bg-gray-100">
         <h1>Products</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 py-10">
             {products.map(product => (

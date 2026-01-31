@@ -6,7 +6,7 @@ export const ProductCard = ({ product }) => {
     const { title, price, thumbnail } = product
     return (
         <div className="flex justify-evenly ">
-            <div className="w-xs border border-pink-300 rounded-xl p-4 space-y-1 hover:shadow-2xl shadow-purple -300 transition-all">
+            <div className="w-xs border border-pink-300 rounded-xl p-4 space-y-1 hover:shadow-2xl shadow-purple -300 transition-all bg-gray-200">
                 <div className="flex items-center justify-center">
                     <img src={thumbnail} alt={title} className="w-48 "/>
                 </div>
